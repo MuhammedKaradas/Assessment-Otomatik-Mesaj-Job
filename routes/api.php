@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MessageTemplateController;
+use App\Http\Controllers\MessageContactController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('templates', MessageTemplateController::class);
 
-Route::apiResource('contacts', MessageTemplateController::class);
+Route::apiResource('contacts', MessageContactController::class);
