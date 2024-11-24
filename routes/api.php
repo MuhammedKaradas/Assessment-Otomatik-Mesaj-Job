@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('templates', MessageTemplateController::class);
+
+Route::apiResource('contacts', MessageTemplateController::class);
