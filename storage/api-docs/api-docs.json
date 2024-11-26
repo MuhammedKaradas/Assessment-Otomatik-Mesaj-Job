@@ -30,6 +30,71 @@
                         "X-Api-Key": []
                     }
                 ]
+            },
+            "post": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "Mesaj Gönder",
+                "description": "Gönderilmesi istenen mesaj kaydını oluşturur.",
+                "operationId": "store",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "contact_id",
+                                    "template_id"
+                                ],
+                                "properties": {
+                                    "contact_id": {
+                                        "type": "integer",
+                                        "format": "integer",
+                                        "example": "1"
+                                    },
+                                    "template_id": {
+                                        "type": "integer",
+                                        "format": "integer",
+                                        "example": "1"
+                                    },
+                                    "status": {
+                                        "type": "integer",
+                                        "format": "integer",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "example": ""
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
             }
         },
         "/api/contacts": {
@@ -148,6 +213,37 @@
                         "X-Api-Key": []
                     }
                 ]
+            }
+        },
+        "/api/messages/send-messages": {
+            "get": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "Job Tetikle",
+                "description": "Job ı Queue ya ekler.",
+                "operationId": "send-messages",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/api/templates": {

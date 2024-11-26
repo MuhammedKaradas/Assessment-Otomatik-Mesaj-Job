@@ -90,11 +90,57 @@ class MessageController extends Controller
     }
 
     /**
-     * @OA\PathItem(
-     *     path="/api/messages",
-     *     summary="Mesajlar ile ilgili işlemler",
-     *     description="Bu uç noktalar mesajlarla ilgili işlemleri içerir"
-     * )
+     * @OA\Post(
+     *      path="/api/messages",
+     *      operationId="store",
+     *      tags={"Messages"},
+     *      summary="Mesaj Gönder",
+     *      description="Gönderilmesi istenen mesaj kaydını oluşturur.",
+     *      security={
+     *           {"X-Api-Key": {}}
+     *       },
+     *      @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *            required={"contact_id", "template_id"},
+     *            @OA\Property(
+     *              property="contact_id",
+     *              type="integer",
+     *              format="integer",
+     *              example="1"
+     *              ),
+     *            @OA\Property(
+     *              property="template_id",
+     *              type="integer",
+     *              format="integer",
+     *              example="1"
+     *              ),
+     *            @OA\Property(
+     *              property="status",
+     *              type="integer",
+     *              format="integer",
+     *              example="1"
+     *              ),
+     *         ),
+     *      ),
+     *     @OA\Response(
+     *          response=200, description="Success",
+     *          @OA\JsonContent(
+     *             @OA\Property(
+     *                property="status",
+     *                type="integer",
+     *                 example=""
+     *                 ),
+     *             @OA\Property(
+     *                property="data",
+     *               type="object"
+     *               )
+     *          )
+     *       )
+     *  )
+     *
+     * @param StoreStudentRequest $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -128,11 +174,31 @@ class MessageController extends Controller
     //Custom Methods
 
     /**
-     * @OA\PathItem(
-     *     path="/api/messages",
-     *     summary="Mesajlar ile ilgili işlemler",
-     *     description="Bu uç noktalar mesajlarla ilgili işlemleri içerir"
-     * )
+     * @OA\Get(
+     *    path="/api/messages/send-messages",
+     *    operationId="send-messages",
+     *    tags={"Messages"},
+     *    summary="Job Tetikle",
+     *    description="Job ı Queue ya ekler.",
+     *     @OA\Response(
+     *          response=200,
+     *          description="Success",
+     *          @OA\JsonContent(
+     *          @OA\Property(
+     *                property="status_code",
+     *                type="integer",
+     *                 example="200"
+     *              ),
+     *          @OA\Property(
+     *               property="data",
+     *               type="object"
+     *              )
+     *           ),
+     *        )
+     *       )
+     *  )
+     * @param string $id
+     * @return JsonResponse
      */
     public function sendMessages()
     {
