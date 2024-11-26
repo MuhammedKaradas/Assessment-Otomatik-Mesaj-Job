@@ -27,13 +27,8 @@ Route::prefix('messages')->group(function () {
         '' => 'message',
     ]);
 });
-//Custom Routes
-// Route::get('messages/send-messages', [MessageController::class, 'sendMessages']);
 
-//Crud Routes
 Route::apiResource('templates', MessageTemplateController::class);
 
 Route::apiResource('contacts', MessageContactController::class);
-
-Route::apiResource('messages', MessageController::class);
 

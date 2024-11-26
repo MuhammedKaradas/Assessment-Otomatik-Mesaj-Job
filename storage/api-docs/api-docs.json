@@ -1,0 +1,42 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Otomatik Mesaj Gönderim JOB API",
+        "description": "API Dokümantasyonu",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/messages": {
+            "summary": "Mesajlar ile ilgili işlemler",
+            "description": "Bu uç noktalar mesajlarla ilgili işlemleri içerir",
+            "get": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "List Messages",
+                "operationId": "9d5effa2cb648df85be0ea9741ffb457",
+                "responses": {
+                    "200": {
+                        "description": "Mesaj listeleri.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Messages",
+            "description": "Messages"
+        }
+    ]
+}
