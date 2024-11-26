@@ -19,6 +19,11 @@ class MessageTemplateRepository implements MessageTemplateInterface
         return MessageTemplate::query()->findOrFail($id);
     }
 
+    public function findCode(string $code): MessageTemplate
+    {
+        return MessageTemplate::query()->where('template_code',  MessageTemplate::from($code))->firstOrFail();
+    }
+
     public function create(array $data): MessageTemplate
     {
         return MessageTemplate::create($data);

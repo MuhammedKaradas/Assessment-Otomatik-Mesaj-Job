@@ -23,6 +23,11 @@ class MessageTemplateService
         return $this->templateRepository->find($id);
     }
 
+    public function findCode(string $code): MessageTemplate
+    {
+        return $this->templateRepository->findCode($code);
+    }
+
     public function create(array $data): MessageTemplate
     {
         return $this->templateRepository->create($data);

@@ -10,6 +10,7 @@ interface MessageTemplateInterface
 {
     public function all(): Collection;
     public function find(int $id): MessageTemplate;
+    public function findCode(string $code): MessageTemplate;
     public function create(array $data): MessageTemplate;
     public function update(array $data, int $id): MessageTemplate;
     public function delete(int $id): MessageTemplate;
