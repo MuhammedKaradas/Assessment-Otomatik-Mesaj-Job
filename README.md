@@ -13,6 +13,11 @@ Veritabanı laravel framework ünden bağımsız 3 custom tablodan oluşmaktadı
 
 ## Çalışma Yapısı
 
+1.Yol
+- ```php artisan messages:send``` komutu ile job queue ya alınır
+- Farklı bir terminalde ```php artisan queue:work``` ile kayıtlar işlenmeye başlanır.
+
+2.Yol
 - MessagesController ında bulunan SendMessages Metodu tetiklendikten sonra job http://localhost:8000/api/messages/send-messages job queue ya alınır
 - Farklı bir terminalde ```php artisan queue:work``` ile kayıtlar işlenmeye başlanır.
 
