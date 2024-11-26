@@ -17,7 +17,11 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'contact_id' => 1,
+            'template_id' => 1,
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
