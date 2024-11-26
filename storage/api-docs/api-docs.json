@@ -13,14 +13,203 @@
                 "tags": [
                     "Messages"
                 ],
-                "summary": "List Messages",
+                "summary": "Mesaj Özet Listesi",
                 "operationId": "9d5effa2cb648df85be0ea9741ffb457",
                 "responses": {
                     "200": {
-                        "description": "Mesaj listeleri.",
+                        "description": "Mesaj Özet Listesi.",
                         "content": {
                             "application/json": {
                                 "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
+            }
+        },
+        "/api/contacts": {
+            "get": {
+                "tags": [
+                    "Contacts"
+                ],
+                "summary": "Mesaj Kişi Bilgileri Listesi",
+                "operationId": "83cd38d29400c00ede1a13a5d506bcb2",
+                "responses": {
+                    "200": {
+                        "description": "Mesaj Kişi Bilgileri Listesi.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
+            }
+        },
+        "/api/contacts/{id}": {
+            "get": {
+                "tags": [
+                    "Contacts"
+                ],
+                "summary": "Kişi Bilgileri",
+                "description": "Kişi Bilgilerini getirir.",
+                "operationId": "MessageContactController_show",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id li Kişi Bilgileri",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
+            }
+        },
+        "/api/messages/{id}": {
+            "get": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "Mesaj Özet",
+                "description": "Mesaj Özet Bilgilerini getirir.",
+                "operationId": "MessagesController_show",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id li Mesaj Özet",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
+            }
+        },
+        "/api/templates": {
+            "get": {
+                "tags": [
+                    "Templates"
+                ],
+                "summary": "Mesaj Şablon Listesi",
+                "operationId": "e6f496c9572aeb449d06e56d1fdc09ec",
+                "responses": {
+                    "200": {
+                        "description": "Mesaj Şablon Listesi.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "X-Api-Key": []
+                    }
+                ]
+            }
+        },
+        "/api/templates/{id}": {
+            "get": {
+                "tags": [
+                    "Templates"
+                ],
+                "summary": "Mesaj Şablon",
+                "description": "Mesaj Şablon Bilgilerini getirir.",
+                "operationId": "MessageTemplateController_show",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id li Mesaj Şablon",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status_code": {
+                                            "type": "integer",
+                                            "example": "200"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
                             }
                         }
                     }
@@ -35,8 +224,16 @@
     },
     "tags": [
         {
+            "name": "Contacts",
+            "description": "Contacts"
+        },
+        {
             "name": "Messages",
             "description": "Messages"
+        },
+        {
+            "name": "Templates",
+            "description": "Templates"
         }
     ]
 }

@@ -32,7 +32,7 @@ class MessageTemplateController extends Controller
     /**
      * @OA\Get(
      *    path="/api/templates/{id}",
-     *    operationId="show",
+     *    operationId="MessageTemplateController_show",
      *    tags={"Templates"},
      *    summary="Mesaj Şablon",
      *    description="Mesaj Şablon Bilgilerini getirir.",

@@ -50,7 +50,7 @@ class MessageController extends Controller
     /**
      * @OA\Get(
      *    path="/api/messages/{id}",
-     *    operationId="show",
+     *    operationId="MessagesController_show",
      *    tags={"Messages"},
      *    summary="Mesaj Özet",
      *    description="Mesaj Özet Bilgilerini getirir.",

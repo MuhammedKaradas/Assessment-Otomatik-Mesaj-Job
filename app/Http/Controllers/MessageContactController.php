@@ -32,7 +32,7 @@ class MessageContactController extends Controller
     /**
      * @OA\Get(
      *    path="/api/contacts/{id}",
-     *    operationId="show",
+     *    operationId="MessageContactController_show",
      *    tags={"Contacts"},
      *    summary="Kişi Bilgileri",
      *    description="Kişi Bilgilerini getirir.",
